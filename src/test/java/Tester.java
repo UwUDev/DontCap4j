@@ -25,5 +25,11 @@ public class Tester {
         // Can be done without Options   Captcha captcha = api.getCaptcha("00000000-0000-0000-0000-000000000000", "www.hcaptcha.com", proxy);
         Captcha captcha = api.tryGetCaptchaUntilSuccess("00000000-0000-0000-0000-000000000000", "www.hcaptcha.com", proxy, options);
         System.out.println("Solved in " + captcha.getTimeString() + " with " + captcha.getFailCount() + " fails.  " + captcha.getKey());
+        System.out.println(captcha.isChromeAgent() ? "Chrome" : "Not Chrome");
+        System.out.println("User agent: " + captcha.getUserAgent());
+        System.out.println("Chrome version: " + captcha.getChromeVersion());
+        System.out.println("Safari version: " + captcha.getSafariVersion());
+        System.out.println("Mozilla version: " + captcha.getMozillaVersion());
+        System.out.println("Webkit version: " + captcha.getWebkitVersion());
     }
 }

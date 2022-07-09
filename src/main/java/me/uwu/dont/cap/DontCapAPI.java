@@ -106,7 +106,7 @@ public class DontCapAPI {
                 throw new InternalServerErrorException(json.get("message").getAsString());
             } else {
                 long end = System.currentTimeMillis();
-                Captcha captcha = new Captcha(json.get("captcha_key").getAsString());
+                Captcha captcha = new Captcha(json.get("captcha_key").getAsString(), json.get("useragent").getAsString());
                 captcha.setTime(end - start);
                 return captcha;
             }
